@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vitor Madeira • Cabeleireiro</title>
+    <meta
+      name="description"
+      content="Cortes, coloração e tratamentos. Veja meu trabalho e agende."
+    />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/img/favicon.png"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/img/hero.avif"
+      imagesrcset="assets/img/hero.avif 1200w, assets/img/hero-800.avif 800w"
+      imagesizes="(max-width: 800px) 100vw, 1200px"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="wrap">
+      <nav>
+        <div class="brand">Vitor Madeira • Cabeleireiro</div>
+        <div>
+          <a class="btn" href="#contato">Agendar</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="wrap">
+      <section class="hero" id="inicio">
+        <div>
+          <h1>Beleza que valoriza sua essência ✂️</h1>
+          <p class="muted">
+            Cortes, coloração e tratamentos com foco em saúde capilar e estilo
+            pessoal. Atendo com horário marcado.
+          </p>
+          <p><a class="btn" href="#portfolio">Ver portfolio</a></p>
+        </div>
+        <picture>
+          <source
+            type="image/avif"
+            srcset="assets/img/hero.avif 1200w, assets/img/hero-800.avif 800w"
+            sizes="(max-width: 800px) 100vw, 1200px"
+          />
+          <source
+            type="image/webp"
+            srcset="assets/img/hero.webp 1200w, assets/img/hero-800.webp 800w"
+            sizes="(max-width: 800px) 100vw, 1200px"
+          />
+          <img
+            src="assets/img/hero.jpg"
+            alt="Antes e depois de corte e escova"
+            width="1200"
+            height="800"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </picture>
+      </section>
+
+      <section id="servicos">
+        <h2>Serviços</h2>
+        <div class="grid">
+          <div class="card">
+            <strong>Corte</strong>
+            <p class="muted">Visagismo e finalização.</p>
+          </div>
+          <div class="card">
+            <strong>Coloração</strong>
+            <p class="muted">Técnicas modernas, saúde em 1º lugar.</p>
+          </div>
+          <div class="card">
+            <strong>Tratamentos</strong>
+            <p class="muted">Nutrição, reconstrução e brilho.</p>
+          </div>
+          <div class="card">
+            <strong>Eventos</strong>
+            <p class="muted">Penteados e make em parceria.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div id="gallery" class="grid gallery"></div>
+      </section>
+
+      <section id="sobre">
+        <h2>Sobre</h2>
+        <p class="muted">
+          Profissional com 9 anos de experiência, especializado em cortes
+          masculinos, coloração e penteados. Tenho prática em atendimento
+          diversificado, com foco em qualidade técnica e satisfação dos
+          clientes. Busco contribuir com o crescimento do salão através de
+          excelência no atendimento e atualização constante das técnicas. 🌟
+        </p>
+      </section>
+
+      <section id="contato">
+        <h2>Contato</h2>
+        <div class="card">
+          <p>
+            <strong>WhatsApp:</strong>
+            <a href="https://wa.me/5515996831709" rel="noopener"
+              >Enviar mensagem</a
+            >
+          </p>
+          <p>
+            <strong>Instagram:</strong>
+            <a href="https://instagram.com/arte.emfios.madeira" rel="noopener"
+              >@arte.emfios.madeira</a
+            >
+          </p>
+          <p>
+            <strong>Endereço:</strong> Rua Professor Armando Rizzo, 440 - Vila
+            Almeida - Sorocaba
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wrap footer">© <span id="y"></span> • Vitor Madeira</footer>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+
+    <script>
+      const looks = [
+        { base: "look1", alt: "Corte bob texturizado" },
+        { base: "look2", alt: "Luzes em morena iluminada" },
+        {
+          base: "look3",
+          alt: "Cacheados com finalização definida",
+        },
+        {
+          base: "look4",
+          alt: "Corte curto masculino degradê",
+        },
+      ];
+
+      function pictureHTML({ base, alt }) {
+        const sizes = "(max-width:600px) 50vw, 400px";
+        return `
+      <picture>
+        <source type="image/avif"
+          srcset="assets/img/${base}.avif 800w, assets/img/${base}-400.avif 400w"
+          sizes="${sizes}" />
+        <source type="image/webp"
+          srcset="assets/img/${base}.webp 800w, assets/img/${base}-400.webp 400w"
+          sizes="${sizes}" />
+        <img
+          src="assets/img/${base}.jpg"
+          alt="${alt}"
+          width="800" height="1000"
+          loading="lazy"
+          decoding="async"
+          style="background:#f3f3f3" />
+      </picture>`;
+      }
+
+      const gallery = document.getElementById("gallery");
+      gallery.innerHTML = looks.map(pictureHTML).join("");
+    </script>
+  </body>
+</html>
