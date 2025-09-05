@@ -1,5 +1,5 @@
 :root {
-  --bg: #0f0f10;
+  --bg: #10100f;
   --fg: #f5f5f7;
   --muted: #c4c4ca;
   --accent: #c4a27a;
@@ -86,6 +86,7 @@ header.wrap {
   position: sticky;
   background: var(--bg);
   top: 0;
+  z-index: 40;
 }
 
 .nav {
@@ -202,7 +203,7 @@ h2 {
 .grid {
   display: grid;
   gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 .card {
   background: var(--card);
@@ -214,6 +215,9 @@ h2 {
 .card:hover {
   transform: translateY(-2px);
   border-color: #2a2a30;
+}
+details.card {
+  cursor: pointer;
 }
 .hint {
   margin-top: 10px;
@@ -269,6 +273,7 @@ dialog::backdrop {
   border-top: 1px solid var(--border);
   color: var(--muted);
   font-size: 14px;
+  padding-bottom: 75px;
 }
 
 .wa-fab {
@@ -285,6 +290,7 @@ dialog::backdrop {
   box-shadow: var(--shadow);
   font-size: 22px;
   z-index: 40;
+  padding: 8px;
 }
 .wa-fab:hover {
   transform: translateY(-2px);
@@ -360,4 +366,8 @@ dialog::backdrop {
 
 details.card:not(:first-child) {
   margin-top: 16px;
+}
+
+blockquote {
+  margin: 0;
 }
