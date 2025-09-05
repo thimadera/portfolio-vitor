@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,6 +14,7 @@
     <link rel="canonical" href="https://seu-dominio.com/" />
 
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
     <meta
       property="og:title"
       content="Vitor Madeira • Cabeleireiro em Sorocaba"
@@ -26,7 +27,6 @@
       property="og:image"
       content="https://seu-dominio.com/assets/img/hero.jpg"
     />
-    <meta property="og:locale" content="pt_BR" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta
@@ -92,9 +92,9 @@
         <div class="nav-cta">
           <a
             class="btn btn--primary"
-            href="https://wa.me/5515996831709?text=Oi%20Vitor!%20Vim%20do%20site.&utm_source=site&utm_medium=header&utm_campaign=agendamento"
+            data-wa
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             aria-label="Agendar pelo WhatsApp"
             >Agendar</a
           >
@@ -113,9 +113,9 @@
           <div class="cta">
             <a
               class="btn btn--primary"
-              href="https://wa.me/5515996831709?text=Oi%20Vitor!%20Vim%20do%20site.&utm_source=site&utm_medium=hero&utm_campaign=agendamento"
+              data-wa
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               >Agendar agora</a
             >
             <a class="btn btn--ghost" href="#portfolio">Ver portfólio</a>
@@ -211,10 +211,7 @@
         </div>
         <p class="hint">
           Quer orçamento?
-          <a
-            href="https://wa.me/5515996831709?text=Oi%20Vitor!%20Quero%20um%20or%C3%A7amento.&utm_source=site&utm_medium=servicos&utm_campaign=whatsapp"
-            target="_blank"
-            rel="noopener"
+          <a data-wa target="_blank" rel="noopener noreferrer"
             >Chame no WhatsApp</a
           >
           e me conte seu objetivo. 💬
@@ -302,10 +299,7 @@
         <div class="card contact">
           <p>
             <strong>WhatsApp:</strong>
-            <a
-              href="https://wa.me/5515996831709?text=Oi%20Vitor!%20Vim%20do%20site.&utm_source=site&utm_medium=contato&utm_campaign=whatsapp"
-              target="_blank"
-              rel="noopener"
+            <a data-wa target="_blank" rel="noopener noreferrer"
               >Enviar mensagem</a
             >
           </p>
@@ -318,7 +312,7 @@
             <a
               href="https://instagram.com/arte.emfios.madeira"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               >@arte.emfios.madeira</a
             >
           </p>
@@ -327,17 +321,16 @@
             <a
               href="https://maps.google.com/?q=Rua+Professor+Armando+Rizzo,+440,+Sorocaba"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
+              >Rua Professor Armando Rizzo, 440 — Vila Almeida — Sorocaba</a
             >
-              Rua Professor Armando Rizzo, 440 — Vila Almeida — Sorocaba
-            </a>
           </p>
           <div class="contact-cta">
             <a
               class="btn btn--primary"
-              href="https://wa.me/5515996831709?text=Oi%20Vitor!%20Quero%20agendar.&utm_source=site&utm_medium=contato&utm_campaign=agendar"
+              data-wa
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               aria-label="Agendar no WhatsApp"
               >Agendar pelo WhatsApp</a
             >
@@ -353,9 +346,9 @@
     <div class="bottom-cta">
       <a
         class="btn btn--primary btn--full"
-        href="https://wa.me/5515996831709?text=Oi%20Vitor!%20Vim%20do%20site.&utm_source=site&utm_medium=bottom_cta&utm_campaign=agendamento"
+        data-wa
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
         aria-label="Agendar no WhatsApp (fixo)"
         >Agendar pelo WhatsApp</a
       >
@@ -363,9 +356,9 @@
 
     <a
       class="wa-fab"
-      href="https://wa.me/5515996831709?text=Oi%20Vitor!%20Vim%20do%20site.&utm_source=site&utm_medium=fab&utm_campaign=agendamento"
+      data-wa
       target="_blank"
-      rel="noopener"
+      rel="noopener noreferrer"
       aria-label="Abrir WhatsApp para agendamento"
       >🗓️</a
     >
@@ -451,192 +444,6 @@
       }
     </script>
 
-    <script>
-      document.getElementById("y").textContent = new Date().getFullYear();
-
-      const toggle = document.querySelector(".nav-toggle");
-      const menu = document.getElementById("menu");
-
-      const syncMenuWithViewport = () => {
-        if (window.matchMedia("(min-width: 901px)").matches) {
-          menu.hidden = false;
-          toggle.setAttribute("aria-expanded", "false");
-        } else {
-          menu.hidden = true;
-          toggle.setAttribute("aria-expanded", "false");
-        }
-      };
-
-      syncMenuWithViewport();
-      window.addEventListener("resize", syncMenuWithViewport);
-
-      toggle.addEventListener("click", () => {
-        const open = toggle.getAttribute("aria-expanded") === "true";
-        toggle.setAttribute("aria-expanded", String(!open));
-        menu.hidden = open;
-      });
-
-      menu.addEventListener("click", (e) => {
-        if (
-          e.target.closest("a") &&
-          window.matchMedia("(max-width: 900px)").matches
-        ) {
-          toggle.setAttribute("aria-expanded", "false");
-          menu.hidden = true;
-        }
-      });
-
-      const looks = [
-        {
-          base: "look1",
-          alt: "Corte bob texturizado",
-          caption: "Corte bob com texturização leve",
-        },
-        {
-          base: "look2",
-          alt: "Luzes em morena iluminada",
-          caption: "Luzes sutis para iluminar sem danificar",
-        },
-        {
-          base: "look3",
-          alt: "Cacheados com finalização definida",
-          caption: "Definição e brilho para cachos",
-        },
-        {
-          base: "look4",
-          alt: "Corte curto masculino degradê",
-          caption: "Degradê preciso com acabamento limpo",
-        },
-      ];
-
-      function pictureHTML({ base, alt }) {
-        const sizes = "(max-width:600px) 50vw, 400px";
-        return `
-          <picture class="gallery__item" data-base="${base}" data-alt="${alt}" tabindex="0" aria-label="Abrir ${alt}">
-            <source type="image/avif" srcset="assets/img/${base}.avif 800w, assets/img/${base}-400.avif 400w" sizes="${sizes}" />
-            <source type="image/webp" srcset="assets/img/${base}.webp 800w, assets/img/${base}-400.webp 400w" sizes="${sizes}" />
-            <img src="assets/img/${base}.jpg" alt="${alt}" width="800" height="1000" loading="lazy" decoding="async" style="background:#f3f3f3" />
-          </picture>`;
-      }
-
-      const gallery = document.getElementById("gallery");
-      gallery.innerHTML = looks.map(pictureHTML).join("");
-
-      const dlg = document.getElementById("lightbox");
-      const dlgImg = document.getElementById("lightbox-img");
-      const dlgCap = document.getElementById("lightbox-caption");
-      const closeBtn = document.querySelector(".lightbox-close");
-      const titleLb = document.getElementById("lightbox-title");
-      let lastFocused = null;
-
-      function openLightbox(item) {
-        dlgImg.src = `assets/img/${item.base}.jpg`;
-        dlgImg.alt = item.alt;
-        dlgCap.textContent = item.caption || "";
-        lastFocused = document.activeElement;
-        dlg.showModal();
-        closeBtn.focus();
-      }
-
-      gallery.addEventListener("click", (e) => {
-        const pic = e.target.closest(".gallery__item");
-        if (!pic) return;
-        const base = pic.dataset.base;
-        const item = looks.find((l) => l.base === base);
-        openLightbox(item);
-      });
-
-      gallery.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          const pic = e.target.closest(".gallery__item");
-          if (!pic) return;
-          const base = pic.dataset.base;
-          const item = looks.find((l) => l.base === base);
-          openLightbox(item);
-          e.preventDefault();
-        }
-      });
-
-      document
-        .querySelector(".lightbox-close")
-        .addEventListener("click", () => dlg.close());
-      dlg.addEventListener("click", (e) => {
-        if (e.target === dlg) dlg.close();
-      });
-      dlg.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") dlg.close();
-      });
-
-      dlg.addEventListener("keydown", (e) => {
-        if (e.key !== "Tab") return;
-        const focusables = dlg.querySelectorAll(
-          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-        );
-        const first = focusables[0];
-        const last = focusables[focusables.length - 1];
-        if (e.shiftKey && document.activeElement === first) {
-          last.focus();
-          e.preventDefault();
-        } else if (!e.shiftKey && document.activeElement === last) {
-          first.focus();
-          e.preventDefault();
-        }
-      });
-
-      dlg.addEventListener("close", () => {
-        lastFocused && lastFocused.focus();
-      });
-
-      const bottomCta = document.querySelector(".bottom-cta");
-      const waFab = document.querySelector(".wa-fab");
-      const mq = window.matchMedia("(max-width: 700px)");
-      const toggleFab = () => {
-        waFab.style.display = mq.matches ? "none" : "grid";
-      };
-      toggleFab();
-      mq.addEventListener("change", toggleFab);
-
-      // ===== CTA dinâmico (mobile): aparece só depois do herói =====
-      const heroSection = document.querySelector(".hero");
-
-      const mqMobile = window.matchMedia("(max-width: 900px)");
-
-      function updateCtaVisibility(isHeroVisible) {
-        if (!mqMobile.matches) {
-          // desktop: não usamos barra fixa condicional
-          bottomCta?.classList.remove("is-visible");
-          return;
-        }
-        // mobile:
-        if (isHeroVisible) bottomCta?.classList.remove("is-visible");
-        else bottomCta?.classList.add("is-visible");
-      }
-
-      // Se IntersectionObserver não existir, fallback simples:
-      if ("IntersectionObserver" in window && heroSection && bottomCta) {
-        const io = new IntersectionObserver(
-          (entries) => {
-            const entry = entries[0];
-            updateCtaVisibility(entry.isIntersecting);
-          },
-          { threshold: 0.2 } // 20% do herói visível ainda conta como "visível"
-        );
-        io.observe(heroSection);
-
-        // Recalcular quando entrar/sair do mobile
-        mqMobile.addEventListener?.("change", () => {
-          // Força reset:
-          bottomCta.classList.remove("is-visible");
-        });
-      } else {
-        // Fallback: só mostra a barra depois de um pouco de scroll no mobile
-        window.addEventListener("scroll", () => {
-          if (!mqMobile.matches) return;
-          const scrolled = window.scrollY || document.documentElement.scrollTop;
-          if (scrolled > 300) bottomCta?.classList.add("is-visible");
-          else bottomCta?.classList.remove("is-visible");
-        });
-      }
-    </script>
+    <script src="assets/js/app.min.js" defer></script>
   </body>
 </html>

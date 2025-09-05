@@ -8,6 +8,11 @@
   --border: #242429;
   --radius: 12px;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  --header-h: 55px;
+}
+
+section[id] {
+  scroll-margin-top: var(--header-h);
 }
 
 * {
@@ -77,11 +82,18 @@ footer {
   margin-inline: auto;
 }
 
+header.wrap {
+  position: sticky;
+  background: var(--bg);
+  top: 0;
+}
+
 .nav {
   display: flex;
   gap: 16px;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 .brand {
   font-weight: 700;
@@ -148,8 +160,8 @@ footer {
 .hero img {
   width: 100%;
   height: auto;
-  border-radius: 12px;
   display: block;
+  border-radius: 12px;
   box-shadow: var(--shadow);
 }
 h1 {
@@ -211,9 +223,9 @@ h2 {
 .gallery img {
   width: 100%;
   height: auto;
-  border-radius: 10px;
   display: block;
-  aspect-ratio: 4 / 5;
+  border-radius: 10px;
+  aspect-ratio: 4/5;
   object-fit: cover;
 }
 .gallery__item {
@@ -293,17 +305,20 @@ dialog::backdrop {
   display: none;
   z-index: 30;
 }
+.bottom-cta.is-visible {
+  display: block;
+}
 
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
   }
-
   .menu {
     display: none;
     position: absolute;
     top: 100%;
     right: 0;
+    min-width: 220px;
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 12px;
@@ -311,31 +326,18 @@ dialog::backdrop {
     flex-direction: column;
     gap: 12px;
     z-index: 50;
-    min-width: 220px;
   }
-
-  .nav-toggle {
-    display: inline-block;
-  }
-
   .menu[hidden] {
     display: none;
   }
-
-  .nav {
-    position: relative;
-  }
-
   .menu:not([hidden]) {
     display: flex;
   }
-
-  .nav-cta {
-    display: none;
+  .nav-toggle {
+    display: inline-block;
   }
-  .contact-cta {
-    display: none;
-  }
+  .nav-cta,
+  .contact-cta,
   .wa-fab {
     display: none;
   }
@@ -358,11 +360,4 @@ dialog::backdrop {
 
 details.card:not(:first-child) {
   margin-top: 16px;
-}
-
-.bottom-cta {
-  display: none;
-}
-.bottom-cta.is-visible {
-  display: block;
 }
