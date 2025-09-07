@@ -13,6 +13,10 @@
     <meta name="theme-color" content="#0f0f10" />
 
     <link rel="canonical" href="https://arteemfiosmadeira.web.app/" />
+    <meta
+      name="google-site-verification"
+      content="AfYKxQK1x65B18gjHV_5mULq_BF1Li8jIVcivMg0SRY"
+    />
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
@@ -44,13 +48,23 @@
       content="https://arteemfiosmadeira.web.app/assets/hero.jpg"
     />
 
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/favicon.png"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
     <link rel="apple-touch-icon" href="assets/favicon.png" />
+
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-D15JSFYHDE"
+    ></script>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-D15JSFYHDE");
+    </script>
 
     <link
       rel="preload"
@@ -854,26 +868,50 @@
       {
         "@context": "https://schema.org",
         "@type": "HairSalon",
+        "@id": "https://arteemfiosmadeira.web.app/#hair-salon",
         "name": "Vitor Madeira • Cabeleireiro",
-        "image": "https://arteemfiosmadeira.web.app/assets/hero.jpg",
+        "url": "https://arteemfiosmadeira.web.app/",
+        "description": "Cortes, coloração e penteados com foco em saúde capilar e estilo pessoal, em Sorocaba – SP.",
+        "image": [
+          "https://arteemfiosmadeira.web.app/assets/hero.jpg",
+          "https://arteemfiosmadeira.web.app/assets/look1.jpg",
+          "https://arteemfiosmadeira.web.app/assets/look2.jpg",
+          "https://arteemfiosmadeira.web.app/assets/look3.jpg",
+          "https://arteemfiosmadeira.web.app/assets/look4.jpg"
+        ],
+        "logo": "https://arteemfiosmadeira.web.app/assets/favicon.png",
+        "telephone": "+5515996831709",
+        "sameAs": ["https://instagram.com/arte.emfios.madeira"],
+        "priceRange": "R$ 30 - R$ 180",
+        "currenciesAccepted": "BRL",
+        "paymentAccepted": "cash, credit card, debit card, pix",
+        "potentialAction": {
+          "@type": "ReserveAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://wa.me/5515996831709?text=Quero%20agendar%20um%20hor%C3%A1rio",
+            "inLanguage": "pt-BR",
+            "actionPlatform": [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/MobileWebPlatform"
+            ]
+          }
+        },
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Rua Professor Armando Rizzo, 440",
           "addressLocality": "Sorocaba",
           "addressRegion": "SP",
-          "postalCode": "18065-000",
+          "postalCode": "18075-490",
           "addressCountry": "BR"
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": -23.501,
-          "longitude": -47.458
+          "latitude": -23.4709731,
+          "longitude": -47.469042
         },
         "hasMap": "https://maps.google.com/?q=Rua+Professor+Armando+Rizzo,+440,+Sorocaba",
-        "url": "https://arteemfiosmadeira.web.app/",
-        "telephone": "+55 15 99683-1709",
-        "sameAs": ["https://instagram.com/arte.emfios.madeira"],
-        "priceRange": "R$",
+        "areaServed": "Sorocaba e região",
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
@@ -894,7 +932,47 @@
             "closes": "14:00"
           }
         ],
-        "areaServed": "Sorocaba e região"
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Serviços",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Corte de cabelo"
+              },
+              "priceCurrency": "BRL",
+              "price": "60",
+              "availability": "https://schema.org/InStoreOnly",
+              "url": "https://wa.me/5515996831709?text=Quero%20agendar%20corte"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Coloração"
+              },
+              "priceCurrency": "BRL",
+              "price": "180",
+              "availability": "https://schema.org/InStoreOnly",
+              "url": "https://wa.me/5515996831709?text=Quero%20agendar%20colora%C3%A7%C3%A3o"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Penteado"
+              },
+              "priceCurrency": "BRL",
+              "price": "120",
+              "availability": "https://schema.org/InStoreOnly",
+              "url": "https://wa.me/5515996831709?text=Quero%20agendar%20penteado"
+            }
+          ]
+        },
+        "founder": { "@type": "Person", "name": "Vitor Madeira" },
+        "knowsLanguage": ["pt-BR"]
       }
     </script>
 
