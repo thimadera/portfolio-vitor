@@ -1,7 +1,20 @@
-import { motion, useSpring, useMotionValue, useTransform, MotionValue } from "motion/react";
-import { useRef, MouseEvent, ReactNode } from "react";
+import {
+  motion,
+  MotionValue,
+  useMotionValue,
+  useSpring,
+  useTransform,
+} from "motion/react";
+import { MouseEvent, ReactNode, useRef } from "react";
 
-export function Magnetic({ children, strength = 0.5 }: { children: ReactNode, strength?: number, key?: string | number }) {
+export function Magnetic({
+  children,
+  strength = 0.5,
+}: {
+  children: ReactNode;
+  strength?: number;
+  key?: string | number;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -14,7 +27,7 @@ export function Magnetic({ children, strength = 0.5 }: { children: ReactNode, st
     const centerY = top + height / 2;
     const distanceX = clientX - centerX;
     const distanceY = clientY - centerY;
-    
+
     x.set(distanceX * strength);
     y.set(distanceY * strength);
   };
@@ -39,15 +52,25 @@ export function Magnetic({ children, strength = 0.5 }: { children: ReactNode, st
   );
 }
 
-export function ParallaxImage({ src, alt, scrollYProgress, range = [0, -100] }: { src: string, alt: string, scrollYProgress: MotionValue<number>, range?: [number, number] }) {
+export function ParallaxImage({
+  src,
+  alt,
+  scrollYProgress,
+  range = [0, -100],
+}: {
+  src: string;
+  alt: string;
+  scrollYProgress: MotionValue<number>;
+  range?: [number, number];
+}) {
   const y = useTransform(scrollYProgress, [0, 1], range);
-  
+
   return (
     <div className="overflow-hidden w-full h-full">
-      <motion.img 
+      <motion.img
         style={{ y }}
-        src={src} 
-        alt={alt} 
+        src={src}
+        alt={alt}
         className="w-full h-full object-cover scale-110"
         referrerPolicy="no-referrer"
       />
@@ -55,7 +78,13 @@ export function ParallaxImage({ src, alt, scrollYProgress, range = [0, -100] }: 
   );
 }
 
-export function RevealText({ children, delay = 0 }: { children: string, delay?: number }) {
+export function RevealText({
+  children,
+  delay = 0,
+}: {
+  children: string;
+  delay?: number;
+}) {
   return (
     <div className="overflow-hidden inline-block">
       <motion.span
@@ -71,10 +100,20 @@ export function RevealText({ children, delay = 0 }: { children: string, delay?: 
   );
 }
 
-export function SectionHeading({ subtitle, title, description, light = false }: { subtitle: string, title: string, description?: string, light?: boolean }) {
+export function SectionHeading({
+  subtitle,
+  title,
+  description,
+  light = false,
+}: {
+  subtitle: string;
+  title: string;
+  description?: string;
+  light?: boolean;
+}) {
   return (
     <div className="mb-12 md:mb-24">
-      <motion.span 
+      <motion.span
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -82,7 +121,9 @@ export function SectionHeading({ subtitle, title, description, light = false }: 
       >
         {subtitle}
       </motion.span>
-      <h2 className={`text-3xl sm:text-5xl md:text-8xl font-display leading-[1.1] md:leading-[0.9] mb-6 md:mb-8 ${light ? "text-white" : "text-brand-dark"}`}>
+      <h2
+        className={`text-3xl sm:text-5xl md:text-8xl font-display leading-[1.1] md:leading-[0.9] mb-6 md:mb-8 ${light ? "text-white" : "text-brand-dark"}`}
+      >
         {title.split(" ").map((word, i) => (
           <span key={i} className="inline-block mr-[0.2em]">
             <RevealText delay={i * 0.05}>{word}</RevealText>
@@ -90,7 +131,7 @@ export function SectionHeading({ subtitle, title, description, light = false }: 
         ))}
       </h2>
       {description && (
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

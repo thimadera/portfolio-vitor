@@ -53,8 +53,6 @@ export default function App() {
   const [scrolled, setScrolled] = useState(false);
   const [activeCategory, setActiveCategory] = useState("Todos");
   const [testimonialIndex, setTestimonialIndex] = useState(0);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [isHoveringGallery, setIsHoveringGallery] = useState(false);
 
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -83,19 +81,15 @@ export default function App() {
     requestAnimationFrame(raf);
 
     const handleScroll = () => setScrolled(window.scrollY > 50);
-    const handleMouseMove = (e: any) =>
-      setMousePos({ x: e.clientX, y: e.clientY });
 
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 2500);
 
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("mousemove", handleMouseMove);
       clearTimeout(timer);
       lenis.destroy();
     };
@@ -153,7 +147,6 @@ export default function App() {
         gallery={content.gallery}
         activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}
-        setIsHoveringGallery={setIsHoveringGallery}
       />
 
       <Testimonials
