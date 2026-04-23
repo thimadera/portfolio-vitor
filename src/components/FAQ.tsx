@@ -1,12 +1,12 @@
+import { ExternalLink } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/src/components/ui/accordion";
-import { ExternalLink } from "lucide-react";
-import { Faq } from "../types";
-import { SectionHeading } from "./Layout";
+} from '@/src/components/ui/accordion';
+import { Faq } from '../types';
+import { SectionHeading } from './Layout';
 
 interface FAQProps {
   section: {
@@ -33,12 +33,8 @@ export function FAQ({ section, faqs, whatsapp }: FAQProps) {
               description={section.description}
             />
             <div className="p-8 md:p-12 rounded-[40px] md:rounded-[50px] bg-brand-cream border border-brand-orange/10">
-              <h4 className="text-xl md:text-2xl font-display mb-6">
-                {section.ctaTitle}
-              </h4>
-              <p className="text-neutral-500 mb-8 text-sm md:text-base">
-                {section.ctaDescription}
-              </p>
+              <h4 className="text-xl md:text-2xl font-display mb-6">{section.ctaTitle}</h4>
+              <p className="text-neutral-500 mb-8 text-sm md:text-base">{section.ctaDescription}</p>
               <a
                 href={`https://wa.me/${whatsapp}`}
                 target="_blank"

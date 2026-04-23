@@ -1,20 +1,7 @@
-import {
-  motion,
-  MotionValue,
-  useMotionValue,
-  useSpring,
-  useTransform,
-} from "motion/react";
-import { MouseEvent, ReactNode, useRef } from "react";
+import { motion, MotionValue, useMotionValue, useSpring, useTransform } from 'motion/react';
+import { MouseEvent, ReactNode, useRef } from 'react';
 
-export function Magnetic({
-  children,
-  strength = 0.5,
-}: {
-  children: ReactNode;
-  strength?: number;
-  key?: string | number;
-}) {
+export function Magnetic({ children, strength = 0.5 }: { children: ReactNode; strength?: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -78,17 +65,11 @@ export function ParallaxImage({
   );
 }
 
-function RevealText({
-  children,
-  delay = 0,
-}: {
-  children: string;
-  delay?: number;
-}) {
+function RevealText({ children, delay = 0 }: { children: string; delay?: number }) {
   return (
     <div className="overflow-hidden inline-block">
       <motion.span
-        initial={{ y: "100%" }}
+        initial={{ y: '100%' }}
         whileInView={{ y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
@@ -117,14 +98,14 @@ export function SectionHeading({
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        className={`text-[10px] font-black uppercase tracking-[0.5em] mb-4 block ${light ? "text-white/60" : "text-brand-orange"}`}
+        className={`text-[10px] font-black uppercase tracking-[0.5em] mb-4 block ${light ? 'text-white/60' : 'text-brand-orange'}`}
       >
         {subtitle}
       </motion.span>
       <h2
-        className={`text-3xl sm:text-5xl md:text-8xl font-display leading-[1.1] md:leading-[0.9] mb-6 md:mb-8 ${light ? "text-white" : "text-brand-dark"}`}
+        className={`text-3xl sm:text-5xl md:text-8xl font-display leading-[1.1] md:leading-[0.9] mb-6 md:mb-8 ${light ? 'text-white' : 'text-brand-dark'}`}
       >
-        {title.split(" ").map((word, i) => (
+        {title.split(' ').map((word, i) => (
           <span key={i} className="inline-block mr-[0.2em]">
             <RevealText delay={i * 0.05}>{word}</RevealText>
           </span>
@@ -136,7 +117,7 @@ export function SectionHeading({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className={`max-w-xl text-base md:text-xl font-light leading-relaxed ${light ? "text-white/60" : "text-neutral-500"}`}
+          className={`max-w-xl text-base md:text-xl font-light leading-relaxed ${light ? 'text-white/60' : 'text-neutral-500'}`}
         >
           {description}
         </motion.p>

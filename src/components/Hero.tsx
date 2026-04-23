@@ -1,18 +1,10 @@
-import { ArrowDownRight, Instagram } from "lucide-react";
-import { motion, MotionValue, useTransform } from "motion/react";
-import { Magnetic } from "./Layout";
+import { ArrowDownRight, Instagram } from 'lucide-react';
+import { motion, MotionValue, useTransform } from 'motion/react';
+import { HeroContent } from '../types';
+import { Magnetic } from './Layout';
 
 interface HeroProps {
-  content: {
-    badge: string;
-    title: string;
-    titleItalic: string;
-    description: string;
-    cta: string;
-    image: string;
-    profileImage: string;
-    rotatingText: string;
-  };
+  content: HeroContent;
   scrollYProgress: MotionValue<number>;
   whatsapp: string;
   socialLinks: {
@@ -20,13 +12,9 @@ interface HeroProps {
   };
 }
 
-export function Hero({
-  content,
-  scrollYProgress,
-  whatsapp,
-  socialLinks,
-}: HeroProps) {
+export function Hero({ content, scrollYProgress, whatsapp, socialLinks }: HeroProps) {
   const y = useTransform(scrollYProgress, [0, 1], [0, 500]);
+  const altText = `Retrato profissional de Vitor Madeira: ${content.description.substring(0, 50)}...`;
 
   return (
     <section
@@ -41,17 +29,19 @@ export function Hero({
             transition={{
               duration: 20,
               repeat: Infinity,
-              repeatType: "reverse",
+              repeatType: 'reverse',
             }}
             src={content.image}
-            alt="Vitor Madeira"
+            alt="Fundo artístico sugerindo beleza e transformação"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
+            loading="eager"
+            fetchPriority="high"
           />
         </motion.div>
       </div>
 
-      <div className="max-w-360 mx-auto px-6 md:px-12 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-8">
             <motion.div
@@ -67,9 +57,7 @@ export function Hero({
               </div>
               <h1 className="text-[clamp(3.5rem,14vw,11rem)] font-display text-white leading-[0.9] tracking-tighter mb-8 md:mb-12">
                 {content.title} <br />
-                <span className="italic font-normal text-brand-orange">
-                  {content.titleItalic}
-                </span>
+                <span className="italic font-normal text-brand-orange">{content.titleItalic}</span>
               </h1>
               <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] items-start md:items-center gap-8 md:gap-12">
                 <Magnetic>
@@ -88,7 +76,7 @@ export function Hero({
                     />
                   </motion.a>
                 </Magnetic>
-                <p className="max-w-70 text-white/40 text-[10px] md:text-xs leading-relaxed uppercase tracking-widest font-medium text-pretty">
+                <p className="max-w-70 text-white/60 text-[10px] md:text-xs leading-relaxed uppercase tracking-widest font-medium text-pretty">
                   {content.description}
                 </p>
               </div>
@@ -109,7 +97,7 @@ export function Hero({
               <motion.img
                 style={{ y: useTransform(scrollYProgress, [0, 0.2], [0, 50]) }}
                 src={content.profileImage}
-                alt="Vitor Madeira"
+                alt={altText}
                 className="w-full h-full object-cover rounded-[70px] grayscale group-hover:grayscale-0 transition-all duration-1000 scale-110"
                 referrerPolicy="no-referrer"
               />
@@ -118,22 +106,17 @@ export function Hero({
 
             <motion.div
               animate={{ rotate: 360 }}
-              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
               className="absolute -bottom-16 -left-16 w-32 h-32 md:w-48 md:h-48"
             >
-              <svg
-                viewBox="0 0 100 100"
-                className="w-full h-full fill-brand-orange"
-              >
+              <svg viewBox="0 0 100 100" className="w-full h-full fill-brand-orange">
                 <path
                   id="circlePath"
                   d="M 50, 50 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0"
                   fill="transparent"
                 />
                 <text className="text-[7.5px] uppercase tracking-[0.25em] font-black">
-                  <textPath xlinkHref="#circlePath">
-                    {content.rotatingText}
-                  </textPath>
+                  <textPath href="#circlePath">{content.rotatingText}</textPath>
                 </text>
               </svg>
             </motion.div>
@@ -143,11 +126,7 @@ export function Hero({
 
       <div className="absolute bottom-12 left-12 hidden md:grid">
         <div className="grid gap-6">
-          <a
-            href={socialLinks.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer">
             <Instagram
               className="text-white/20 hover:text-brand-orange cursor-pointer transition-colors"
               size={18}

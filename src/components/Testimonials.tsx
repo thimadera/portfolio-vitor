@@ -1,7 +1,7 @@
-import { ChevronRight, Quote } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
-import { Testimonial } from "../types";
-import { SectionHeading } from "./Layout";
+import { ChevronRight, Quote } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
+import { Testimonial } from '../types';
+import { SectionHeading } from './Layout';
 
 interface TestimonialsProps {
   section: {
@@ -32,11 +32,7 @@ export function Testimonials({
       <div className="max-w-360 mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
           <div className="lg:col-span-5">
-            <SectionHeading
-              subtitle={section.subtitle}
-              title={section.title}
-              light
-            />
+            <SectionHeading subtitle={section.subtitle} title={section.title} light />
             <div className="grid grid-flow-col justify-start gap-4">
               <button
                 onClick={prevTestimonial}
@@ -66,18 +62,18 @@ export function Testimonials({
                   className="w-full"
                 >
                   <p className="text-[clamp(1.5rem,5vw,3rem)] font-display text-white leading-tight mb-12 italic text-pretty">
-                    "{testimonials[testimonialIndex].text}"
+                    &quot;{testimonials[testimonialIndex]?.text}&quot;
                   </p>
                   <div className="grid grid-cols-[auto_1fr] items-center gap-6">
                     <div className="w-16 h-16 rounded-full bg-white/10 grid place-items-center text-white font-bold text-xl border border-white/20">
-                      {testimonials[testimonialIndex].name[0]}
+                      {testimonials[testimonialIndex]?.name[0]}
                     </div>
                     <div>
                       <div className="text-white font-bold text-xl">
-                        {testimonials[testimonialIndex].name}
+                        {testimonials[testimonialIndex]?.name}
                       </div>
                       <div className="text-white/60 text-sm uppercase tracking-widest font-black">
-                        {testimonials[testimonialIndex].role}
+                        {testimonials[testimonialIndex]?.role}
                       </div>
                     </div>
                   </div>

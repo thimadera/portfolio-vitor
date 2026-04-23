@@ -1,13 +1,9 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-} from "@/src/components/ui/dialog";
-import { Tabs, TabsList, TabsTrigger } from "@/src/components/ui/tabs";
-import { Maximize2 } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
-import { GalleryItem } from "../types";
-import { SectionHeading } from "./Layout";
+import { Maximize2 } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
+import { Dialog, DialogContent, DialogTrigger } from '@/src/components/ui/dialog';
+import { Tabs, TabsList, TabsTrigger } from '@/src/components/ui/tabs';
+import { GalleryItem } from '../types';
+import { SectionHeading } from './Layout';
 
 interface GalleryProps {
   section: {
@@ -21,14 +17,9 @@ interface GalleryProps {
   setActiveCategory: (cat: string) => void;
 }
 
-export function Gallery({
-  section,
-  gallery,
-  activeCategory,
-  setActiveCategory,
-}: GalleryProps) {
+export function Gallery({ section, gallery, activeCategory, setActiveCategory }: GalleryProps) {
   const filteredGallery =
-    activeCategory === "Todos"
+    activeCategory === 'Todos'
       ? gallery
       : gallery.filter((item) => item.category === activeCategory);
 
@@ -88,9 +79,7 @@ export function Gallery({
                       <span className="text-brand-orange font-mono text-[10px] uppercase tracking-widest mb-4">
                         {item.category}
                       </span>
-                      <h4 className="text-white text-3xl font-display mb-6">
-                        {item.title}
-                      </h4>
+                      <h4 className="text-white text-3xl font-display mb-6">{item.title}</h4>
                       <div className="w-12 h-12 rounded-full bg-brand-orange text-white grid place-items-center translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                         <Maximize2 size={20} />
                       </div>

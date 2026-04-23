@@ -1,6 +1,6 @@
-import { Instagram, Menu, X } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
+import { Instagram, Menu, X } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
+import { useState } from 'react';
 
 interface NavbarProps {
   scrolled: boolean;
@@ -25,13 +25,13 @@ export function Navbar({
 
   return (
     <nav
-      className={`fixed top-0 w-full z-100 transition-all duration-700 ${scrolled || isMenuOpen ? "bg-brand-cream py-4 shadow-sm" : "bg-transparent py-8"}`}
+      className={`fixed top-0 w-full z-100 transition-all duration-700 ${scrolled || isMenuOpen ? 'bg-brand-cream py-4 shadow-sm' : 'bg-transparent py-8'}`}
     >
       <div className="max-w-360 mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-3 items-center relative z-120">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className={`text-xl sm:text-2xl font-display font-bold tracking-tighter transition-colors duration-500 whitespace-nowrap ${scrolled || isMenuOpen ? "text-brand-dark" : "text-white"}`}
+          className={`text-xl sm:text-2xl font-display font-bold tracking-tighter transition-colors duration-500 whitespace-nowrap ${scrolled || isMenuOpen ? 'text-brand-dark' : 'text-white'}`}
         >
           Vitor Madeira
           <span className="font-light italic text-brand-orange">.</span>
@@ -39,7 +39,7 @@ export function Navbar({
 
         {/* Desktop Menu */}
         <div
-          className={`hidden md:grid grid-flow-col gap-12 text-[10px] font-black uppercase tracking-[0.3em] transition-colors duration-500 justify-center ${scrolled ? "text-brand-dark" : "text-white"}`}
+          className={`hidden md:grid grid-flow-col gap-12 text-[10px] font-black uppercase tracking-[0.3em] transition-colors duration-500 justify-center ${scrolled ? 'text-brand-dark' : 'text-white'}`}
         >
           {navItems.map((item) => (
             <a
@@ -58,7 +58,7 @@ export function Navbar({
             href={`https://wa.me/${whatsapp}`}
             target="_blank"
             rel="noopener noreferrer"
-            className={`px-8 py-3 rounded-full border transition-all duration-500 text-[10px] font-black uppercase tracking-[0.3em] ${scrolled ? "border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white" : "border-white/20 text-white hover:bg-white hover:text-brand-dark"}`}
+            className={`px-8 py-3 rounded-full border transition-all duration-500 text-[10px] font-black uppercase tracking-[0.3em] ${scrolled ? 'border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white' : 'border-white/20 text-white hover:bg-white hover:text-brand-dark'}`}
           >
             {ctaText}
           </a>
@@ -66,8 +66,11 @@ export function Navbar({
 
         <div className="md:hidden grid justify-end">
           <button
-            className={`p-3 rounded-full transition-all duration-500 ${scrolled || isMenuOpen ? "bg-brand-dark text-white" : "bg-white/10 text-white backdrop-blur-md"}`}
+            type="button"
+            className={`p-3 rounded-full transition-all duration-500 focus-visible:outline-2 focus-visible:outline-brand-orange ${scrolled || isMenuOpen ? 'bg-brand-dark text-white' : 'bg-white/10 text-white backdrop-blur-md'}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-expanded={isMenuOpen}
+            aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -86,7 +89,7 @@ export function Navbar({
             <div className="absolute inset-0 opacity-5 pointer-events-none overflow-hidden">
               <motion.div
                 animate={{ rotate: 360 }}
-                transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+                transition={{ duration: 50, repeat: Infinity, ease: 'linear' }}
                 className="absolute -top-1/2 -right-1/2 w-[150%] aspect-square border border-brand-dark/10 rounded-full"
               />
             </div>
@@ -108,9 +111,7 @@ export function Navbar({
                     onClick={() => setIsMenuOpen(false)}
                     className="group grid grid-cols-[auto_1fr] items-center gap-6"
                   >
-                    <span className="text-brand-orange font-mono text-xs">
-                      0{i + 1}
-                    </span>
+                    <span className="text-brand-orange font-mono text-xs">0{i + 1}</span>
                     <span className="text-4xl sm:text-6xl font-display font-bold text-brand-dark group-hover:italic group-hover:text-brand-orange transition-all duration-500">
                       {item}
                     </span>
@@ -129,11 +130,7 @@ export function Navbar({
                 {ctaText}
               </a>
               <div className="grid grid-flow-col justify-start gap-8">
-                <a
-                  href={socialLinks.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer">
                   <Instagram className="text-brand-dark/40 hover:text-brand-orange transition-colors" />
                 </a>
               </div>

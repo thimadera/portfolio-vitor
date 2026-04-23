@@ -1,15 +1,15 @@
-import { Button } from "@/src/components/ui/button";
+import { ArrowDownRight, Clock, Wallet } from 'lucide-react';
+import { motion } from 'motion/react';
+import { Button } from '@/src/components/ui/button';
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/src/components/ui/dialog";
-import { ArrowDownRight, Clock, Wallet } from "lucide-react";
-import { motion } from "motion/react";
-import { Service } from "../types";
-import { SectionHeading } from "./Layout";
+} from '@/src/components/ui/dialog';
+import { Service } from '../types';
+import { SectionHeading } from './Layout';
 
 interface ServicesProps {
   section: {
@@ -27,12 +27,7 @@ interface ServicesProps {
   whatsapp: string;
 }
 
-export function Services({
-  section,
-  services,
-  iconMap,
-  whatsapp,
-}: ServicesProps) {
+export function Services({ section, services, iconMap, whatsapp }: ServicesProps) {
   return (
     <section
       id="serviços"
@@ -129,7 +124,7 @@ export function Services({
                   </div>
                   <Button
                     onClick={() => {
-                      window.open(`https://wa.me/${whatsapp}`, "_blank");
+                      window.open(`https://wa.me/${whatsapp}`, '_blank');
                     }}
                     className="w-full bg-brand-dark text-white py-8 rounded-full font-bold text-xs md:text-sm tracking-widest uppercase hover:bg-brand-orange transition-all duration-500 h-auto"
                   >

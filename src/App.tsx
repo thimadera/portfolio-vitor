@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import Lenis from "lenis";
+import Lenis from 'lenis';
 import {
   ArrowDownRight,
   Award,
@@ -15,26 +15,26 @@ import {
   Phone,
   Scissors,
   Sparkles,
-} from "lucide-react";
-import { AnimatePresence, motion, useScroll, useSpring } from "motion/react";
-import { useEffect, useState } from "react";
-import contentData from "./content.json";
-import { ContentConfig } from "./types";
+} from 'lucide-react';
+import { AnimatePresence, motion, useScroll, useSpring } from 'motion/react';
+import { useEffect, useState } from 'react';
+import { SEO } from './components/SEO';
+import { CONTENT } from './constants/content';
 
 // Components
-import { Toaster } from "@/src/components/ui/sonner";
-import { About } from "./components/About";
-import { Contact } from "./components/Contact";
-import { FAQ } from "./components/FAQ";
-import { Footer } from "./components/Footer";
-import { Gallery } from "./components/Gallery";
-import { Hero } from "./components/Hero";
-import { Loader } from "./components/Loader";
-import { Navbar } from "./components/Navbar";
-import { Services } from "./components/Services";
-import { Testimonials } from "./components/Testimonials";
+import { Toaster } from '@/src/components/ui/sonner';
+import { About } from './components/About';
+import { Contact } from './components/Contact';
+import { FAQ } from './components/FAQ';
+import { Footer } from './components/Footer';
+import { Gallery } from './components/Gallery';
+import { Hero } from './components/Hero';
+import { Loader } from './components/Loader';
+import { Navbar } from './components/Navbar';
+import { Services } from './components/Services';
+import { Testimonials } from './components/Testimonials';
 
-const content = contentData as ContentConfig;
+const content = CONTENT;
 
 const iconMap: Record<string, any> = {
   Scissors: <Scissors className="w-5 h-5" />,
@@ -51,7 +51,7 @@ const iconMap: Record<string, any> = {
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [scrolled, setScrolled] = useState(false);
-  const [activeCategory, setActiveCategory] = useState("Todos");
+  const [activeCategory, setActiveCategory] = useState('Todos');
   const [testimonialIndex, setTestimonialIndex] = useState(0);
 
   const { scrollYProgress } = useScroll();
@@ -64,9 +64,9 @@ export default function App() {
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: "vertical",
-      gestureOrientation: "vertical",
+      easing: (t) => Math.min(1, 1.001 - 2 ** (-10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 1,
       touchMultiplier: 2,
@@ -86,10 +86,10 @@ export default function App() {
       setIsLoading(false);
     }, 1500);
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
       clearTimeout(timer);
       lenis.destroy();
     };
@@ -99,12 +99,12 @@ export default function App() {
     setTestimonialIndex((prev) => (prev + 1) % content.testimonials.length);
   const prevTestimonial = () =>
     setTestimonialIndex(
-      (prev) =>
-        (prev - 1 + content.testimonials.length) % content.testimonials.length,
+      (prev) => (prev - 1 + content.testimonials.length) % content.testimonials.length
     );
 
   return (
     <div className="min-h-screen selection:bg-brand-orange selection:text-white bg-brand-cream text-brand-dark grain">
+      <SEO />
       <AnimatePresence mode="wait">
         {isLoading && <Loader text={content.loader.text} />}
       </AnimatePresence>
@@ -157,17 +157,13 @@ export default function App() {
         nextTestimonial={nextTestimonial}
       />
 
-      <FAQ
-        section={content.faqSection}
-        faqs={content.faqs}
-        whatsapp={content.contact.whatsapp}
-      />
+      <FAQ section={content.faqSection} faqs={content.faqs} whatsapp={content.contact.whatsapp} />
 
       <Contact
         content={{
           ...content.contact,
           social: { instagram: content.footer.social.instagram },
-          email: "contato@vitormadeira.com",
+          email: 'contato@vitormadeira.com',
         }}
       />
 
@@ -187,7 +183,7 @@ export default function App() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="hidden md:grid w-14 h-14 bg-white border border-brand-orange/20 rounded-full place-items-center text-brand-orange shadow-xl hover:bg-brand-orange hover:text-white transition-all duration-500"
             >
               <ArrowDownRight className="-rotate-135" size={20} />

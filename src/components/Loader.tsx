@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion } from 'motion/react';
 
 interface LoaderProps {
   text: string;
@@ -16,7 +16,7 @@ export function Loader({ text }: LoaderProps) {
         <motion.div
           initial={{ y: 100 }}
           animate={{ y: 0 }}
-          transition={{ duration: 0.8, ease: "circOut" }}
+          transition={{ duration: 0.8, ease: 'circOut' }}
           className="text-3xl sm:text-4xl md:text-6xl font-display font-bold text-white text-center whitespace-nowrap"
         >
           Vitor Madeira<span className="text-brand-orange">.</span>
@@ -24,9 +24,9 @@ export function Loader({ text }: LoaderProps) {
       </div>
       <div className="w-48 h-px bg-white/10 relative overflow-hidden">
         <motion.div
-          initial={{ x: "-100%" }}
-          animate={{ x: "100%" }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          initial={{ x: '-100%' }}
+          animate={{ x: '100%' }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
           className="absolute inset-0 bg-brand-orange"
         />
       </div>

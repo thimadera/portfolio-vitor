@@ -25,6 +25,16 @@ export interface Testimonial {
   role: string;
 }
 
+export interface HeroContent {
+  badge: string;
+  title: string;
+  titleItalic: string;
+  description: string;
+  cta: string;
+  image: string;
+  profileImage: string;
+  rotatingText: string;
+}
 export interface ContentConfig {
   loader: {
     text: string;
@@ -33,16 +43,7 @@ export interface ContentConfig {
     items: string[];
     cta: string;
   };
-  hero: {
-    badge: string;
-    title: string;
-    titleItalic: string;
-    description: string;
-    cta: string;
-    image: string;
-    profileImage: string;
-    rotatingText: string;
-  };
+  hero: HeroContent;
   about: {
     subtitle: string;
     title: string;

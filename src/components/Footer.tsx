@@ -1,5 +1,5 @@
-import { ArrowRight, Instagram } from "lucide-react";
-import { Magnetic } from "./Layout";
+import { ArrowRight, Instagram } from 'lucide-react';
+import { Magnetic } from './Layout';
 
 interface FooterProps {
   content: {
@@ -18,10 +18,7 @@ export function Footer({ content, whatsapp }: FooterProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24 mb-24 md:mb-40">
           <div className="lg:col-span-6">
             <h2 className="text-[clamp(2rem,10vw,10rem)] font-display font-bold leading-[0.8] tracking-tighter mb-12 whitespace-nowrap">
-              Vitor{" "}
-              <span className="text-brand-orange italic font-normal">
-                Madeira.
-              </span>
+              Vitor <span className="text-brand-orange italic font-normal">Madeira.</span>
             </h2>
             <div className="grid grid-flow-col justify-start gap-6">
               <Magnetic>
@@ -40,8 +37,7 @@ export function Footer({ content, whatsapp }: FooterProps) {
           <div className="lg:col-span-6 grid content-end justify-start lg:justify-end">
             <div className="lg:text-right max-w-md">
               <p className="text-xl md:text-2xl font-display mb-12 text-neutral-500 leading-relaxed text-pretty">
-                Transformando visões em realidade através do visagismo
-                contemporâneo.
+                Transformando visões em realidade através do visagismo contemporâneo.
               </p>
               <Magnetic>
                 <a
@@ -64,17 +60,6 @@ export function Footer({ content, whatsapp }: FooterProps) {
         <div className="pt-12 border-t border-brand-dark/5 grid grid-cols-1 md:grid-cols-2 justify-between items-center gap-8">
           <div className="text-[10px] font-black uppercase tracking-[0.3em] text-neutral-400 text-center md:text-left">
             {content.copyright}
-          </div>
-          <div className="grid grid-flow-col gap-8 md:gap-12 text-[10px] font-black uppercase tracking-[0.3em] text-neutral-400 justify-center md:justify-end">
-            <a href="#" className="hover:text-brand-orange transition-colors">
-              Privacidade
-            </a>
-            <a href="#" className="hover:text-brand-orange transition-colors">
-              Termos
-            </a>
-            <a href="#" className="hover:text-brand-orange transition-colors">
-              Cookies
-            </a>
           </div>
         </div>
       </div>

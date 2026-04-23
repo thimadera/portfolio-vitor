@@ -1,6 +1,6 @@
-import { ArrowDownRight, MapPin, Phone } from "lucide-react";
-import { motion } from "motion/react";
-import { Magnetic } from "./Layout";
+import { ArrowDownRight, MapPin, Phone } from 'lucide-react';
+import { motion } from 'motion/react';
+import { Magnetic } from './Layout';
 
 interface ContactProps {
   content: {
@@ -30,9 +30,7 @@ export function Contact({ content }: ContactProps) {
           <div className="lg:col-span-6">
             <h2 className="text-[clamp(3.5rem,10vw,8rem)] font-display font-bold leading-[0.8] tracking-tighter mb-12 text-balance">
               {content.form.title} <br />
-              <span className="text-brand-orange italic font-normal">
-                {content.form.subtitle}
-              </span>
+              <span className="text-brand-orange italic font-normal">{content.form.subtitle}</span>
             </h2>
 
             <div className="grid gap-12 md:gap-16">
@@ -57,9 +55,7 @@ export function Contact({ content }: ContactProps) {
                   <div className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40 mb-2">
                     Contato
                   </div>
-                  <div className="text-lg md:text-xl font-display">
-                    {content.phone}
-                  </div>
+                  <div className="text-lg md:text-xl font-display">{content.phone}</div>
                   <div className="text-lg md:text-xl font-display text-brand-orange/60">
                     {content.email}
                   </div>

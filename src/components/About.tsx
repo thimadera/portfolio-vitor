@@ -1,6 +1,6 @@
-import { motion, useScroll } from "motion/react";
-import { useRef } from "react";
-import { ParallaxImage, SectionHeading } from "./Layout";
+import { motion, useScroll } from 'motion/react';
+import { useRef } from 'react';
+import { ParallaxImage, SectionHeading } from './Layout';
 
 interface AboutProps {
   content: {
@@ -27,15 +27,11 @@ export function About({ content }: AboutProps) {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["start end", "end start"],
+    offset: ['start end', 'end start'],
   });
 
   return (
-    <section
-      id="sobre"
-      ref={container}
-      className="py-32 md:py-64 px-6 relative overflow-hidden"
-    >
+    <section id="sobre" ref={container} className="py-32 md:py-64 px-6 relative overflow-hidden">
       <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/4 text-[clamp(10rem,40vw,25rem)] font-display font-black text-brand-dark/2 pointer-events-none select-none whitespace-nowrap">
         Vitor Madeira
       </div>
@@ -59,12 +55,8 @@ export function About({ content }: AboutProps) {
                   className="space-y-4"
                 >
                   <div className="w-12 h-px bg-brand-orange" />
-                  <h4 className="text-2xl font-display italic">
-                    {feature.title}
-                  </h4>
-                  <p className="text-neutral-500 text-sm leading-relaxed">
-                    {feature.description}
-                  </p>
+                  <h4 className="text-2xl font-display italic">{feature.title}</h4>
+                  <p className="text-neutral-500 text-sm leading-relaxed">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -125,7 +117,7 @@ export function About({ content }: AboutProps) {
                   {content.experienceYears}
                 </div>
                 <div className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400">
-                  {content.experienceLabel.split(" ").map((w, i) => (
+                  {content.experienceLabel.split(' ').map((w, i) => (
                     <span key={i} className="block">
                       {w}
                     </span>
