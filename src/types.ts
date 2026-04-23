@@ -5,7 +5,6 @@ export interface Service {
   price: string;
   iconName: string;
   details: string;
-  duration: string;
 }
 
 export interface Faq {
@@ -37,26 +36,13 @@ export interface HeroContent {
 }
 
 export interface ContactContent {
+  title: string;
+  subtitle: string;
   address: string;
   phone: string;
-  email: string;
+  instagram: string;
   whatsapp: string;
   hours: string;
-  social: {
-    instagram: string;
-  };
-  form: {
-    title: string;
-    subtitle: string;
-    fields: {
-      name: string;
-      email: string;
-      service: string;
-      message: string;
-    };
-    button: string;
-    success: string;
-  };
 }
 
 export interface ContentConfig {
@@ -91,7 +77,6 @@ export interface ContentConfig {
     title: string;
     description: string;
     modal: {
-      durationLabel: string;
       investmentLabel: string;
       cta: string;
     };
@@ -122,8 +107,6 @@ export interface ContentConfig {
   footer: {
     social: {
       instagram: string;
-      facebook: string;
-      linkedin: string;
     };
     copyright: string;
   };

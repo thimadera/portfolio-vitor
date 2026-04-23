@@ -1,4 +1,4 @@
-import { ArrowDownRight, Clock, Wallet } from 'lucide-react';
+import { ArrowDownRight, Wallet } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Button } from '@/src/components/ui/button';
 import {
@@ -17,7 +17,6 @@ interface ServicesProps {
     title: string;
     description: string;
     modal: {
-      durationLabel: string;
       investmentLabel: string;
       cta: string;
     };
@@ -94,20 +93,7 @@ export function Services({ section, services, iconMap, whatsapp }: ServicesProps
                   <p className="text-neutral-500 text-base md:text-lg leading-relaxed mb-8 md:mb-12">
                     {service.details}
                   </p>
-                  <div className="grid grid-cols-2 gap-8 md:gap-12 mb-8 md:mb-12">
-                    <div className="grid grid-cols-[auto_1fr] items-start gap-4">
-                      <div className="mt-1 text-brand-orange">
-                        <Clock size={16} />
-                      </div>
-                      <div>
-                        <div className="text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-1">
-                          {section.modal.durationLabel}
-                        </div>
-                        <div className="text-lg md:text-xl font-display font-bold text-brand-dark">
-                          {service.duration}
-                        </div>
-                      </div>
-                    </div>
+                  <div className="grid mb-8 md:mb-12">
                     <div className="grid grid-cols-[auto_1fr] items-start gap-4">
                       <div className="mt-1 text-brand-orange">
                         <Wallet size={16} />

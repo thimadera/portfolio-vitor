@@ -9,16 +9,13 @@ export const CONTENT: ContentConfig = {
     cta: 'Agendar',
   },
   hero: {
-    badge: 'Est. 2018 — Sorocaba/SP',
+    badge: 'Desde 2018 — Sorocaba/SP',
     title: 'Beleza',
     titleItalic: 'Singular.',
-    description:
-      'Especialista em transformar não apenas cabelos, mas a forma como você se vê através de um olhar estratégico.',
+    description: 'Especialista em transformar não apenas cabelos, mas a forma como você se vê.',
     cta: 'Agendar Horário',
-    image:
-      'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=1920',
-    profileImage:
-      'https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&q=80&w=800',
+    image: 'ASSET%20(2).jpeg',
+    profileImage: 'ASSET (4).jpeg',
     rotatingText: 'Vitor Madeira • Sorocaba • Identidade • ',
   },
   about: {
@@ -28,10 +25,8 @@ export const CONTENT: ContentConfig = {
       'Sou cabeleireiro em Sorocaba/SP, com mais de 8 anos de experiência na beleza, especializado em criar resultados que respeitam a identidade, a textura e a história de cada fio. Meu trabalho é guiado por técnica, sensibilidade e um olhar estratégico — porque cada cabelo exige um plano único.',
     experienceYears: '8+',
     experienceLabel: 'Anos de Experiência',
-    mainImage:
-      'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=1200',
-    secondaryImage:
-      'https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&q=80&w=400',
+    mainImage: 'ASSET (4).jpeg',
+    secondaryImage: 'ASSET (3).jpeg',
     stats: {
       value: '100%',
       label: 'Foco em Identidade',
@@ -41,7 +36,7 @@ export const CONTENT: ContentConfig = {
       {
         title: 'Técnica & Sensibilidade',
         description:
-          'Seja em coloridos intensos, definição de cacheados ou alisamentos de alta performance, o foco é unir estética, saúde capilar e durabilidade.',
+          'Seja pra mudar, manter ou recuperar a saúde do cabelo, meu objetivo é sempre o mesmo: resultado bem feito, com técnica e responsabilidade.',
       },
       {
         title: 'Plano Único',
@@ -51,12 +46,11 @@ export const CONTENT: ContentConfig = {
     ],
   },
   servicesSection: {
-    subtitle: 'Menu',
+    subtitle: 'Serviços',
     title: 'Experiências sob medida.',
     description:
       'Aqui não existe padrão — existe identidade. Cada atendimento é exclusivo, com atenção aos detalhes e compromisso real com a sua experiência.',
     modal: {
-      durationLabel: 'Duração',
       investmentLabel: 'Investimento',
       cta: 'Solicitar Agendamento',
     },
@@ -66,79 +60,155 @@ export const CONTENT: ContentConfig = {
       id: '01',
       title: 'Loiros & Iluminadas',
       description: 'Loiros bem construídos e morenas iluminadas com foco na saúde do fio.',
-      price: 'Sob Consulta',
+      price: 'A partir de R$ 300,00',
       iconName: 'Sparkles',
       details:
         'Resultados estratégicos que harmonizam com seu tom de pele, utilizando técnicas que preservam a integridade e o brilho natural.',
-      duration: '180 - 240 min',
     },
     {
       id: '02',
       title: 'Coloridos & Ruivos',
       description: 'Cores intensas e ruivos vibrantes, muitas vezes sem descoloração.',
-      price: 'Sob Consulta',
+      price: 'A partir de R$ 130,00',
       iconName: 'Scissors',
       details:
         'Especialista em ruivos naturais e coloridos criativos. Um plano único para cada desejo, priorizando sempre a saúde capilar.',
-      duration: '120 - 180 min',
     },
     {
       id: '03',
       title: 'Cachos & Alisamentos',
       description: 'Definição de cacheados ou alisamentos de alta performance.',
-      price: 'Sob Consulta',
+      price: 'A partir de R$ 180,00',
       iconName: 'Clock',
       details:
         'Tratamentos especializados para respeitar a textura do seu fio, seja para potencializar a curvatura ou para um liso perfeito e duradouro.',
-      duration: '90 - 150 min',
     },
     {
       id: '04',
-      title: 'Penteados & Tranças',
-      description: 'Penteados para eventos, noivas e tranças nagô exclusivas.',
-      price: 'Sob Consulta',
+      title: 'Penteados & Maquiagem',
+      description: 'Penteados e maquiagem para eventos e noivas.',
+      price: 'A partir de R$ 150,00',
       iconName: 'Award',
       details:
-        'Arte em forma de penteado. Das tranças nagô aos penteados clássicos para noivas, criamos o visual perfeito para o seu momento.',
-      duration: '60 - 120 min',
+        'Arte em forma de penteado. Dos penteados clássicos até os mais elaborados, crio o visual perfeito para o seu momento.',
     },
   ],
   gallerySection: {
     subtitle: 'Portfolio',
     title: 'Arte em movimento.',
-    categories: ['Todos', 'Cor', 'Cachos', 'Estilo'],
+    categories: ['Todos', 'Cor', 'Tranças', 'Maquiagem', 'Barbearia'],
     viewLabel: 'Ver',
   },
   gallery: [
     {
-      url: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=800',
-      title: 'Blonde Perfection',
+      url: 'ASSET (6).jpeg',
+      title: 'Cherry Red',
       category: 'Cor',
     },
     {
-      url: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=800',
-      title: 'Modern Cut',
-      category: 'Estilo',
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&q=80&w=800',
-      title: 'Vibrant Red',
+      url: 'ASSET (1).jpeg',
+      title: 'Morena Iluminada',
       category: 'Cor',
     },
     {
-      url: 'https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&q=80&w=800',
-      title: 'Soft Waves',
-      category: 'Estilo',
+      url: 'ASSET (5).jpeg',
+      title: 'Honey Golden',
+      category: 'Cor',
     },
     {
-      url: 'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&q=80&w=800',
-      title: 'Sleek Look',
-      category: 'Estilo',
+      url: 'ASSET (10).jpeg',
+      title: 'Honey Golden',
+      category: 'Cor',
     },
     {
-      url: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?auto=format&fit=crop&q=80&w=800',
-      title: 'Natural Glow',
-      category: 'Cachos',
+      url: 'ASSET (12).jpeg',
+      title: 'Avelã e Canela',
+      category: 'Cor',
+    },
+    {
+      url: 'ASSET (11).jpeg',
+      title: 'Purple Hair',
+      category: 'Cor',
+    },
+    {
+      url: 'ASSET (14).jpeg',
+      title: 'Galaxy Hair',
+      category: 'Cor',
+    },
+    {
+      url: 'ASSET (23).jpeg',
+      title: 'Trança Nagô',
+      category: 'Tranças',
+    },
+    {
+      url: 'ASSET (24).jpeg',
+      title: 'Trança Nagô',
+      category: 'Tranças',
+    },
+    {
+      url: 'ASSET (25).jpeg',
+      title: 'Trança Nagô',
+      category: 'Tranças',
+    },
+    {
+      url: 'ASSET (7).jpeg',
+      title: 'Boho Braids',
+      category: 'Tranças',
+    },
+    {
+      url: 'ASSET (9).jpeg',
+      title: 'Maquiagem Evento',
+      category: 'Maquiagem',
+    },
+    {
+      url: 'ASSET (13).jpeg',
+      title: 'Maquiagem Evento',
+      category: 'Maquiagem',
+    },
+    {
+      url: 'ASSET (16).jpeg',
+      title: 'Maquiagem Evento',
+      category: 'Maquiagem',
+    },
+    {
+      url: 'ASSET (19).jpeg',
+      title: 'Maquiagem Evento',
+      category: 'Maquiagem',
+    },
+    {
+      url: 'ASSET (20).jpeg',
+      title: 'Maquiagem Evento',
+      category: 'Maquiagem',
+    },
+    {
+      url: 'ASSET (21).jpeg',
+      title: 'Old Money',
+      category: 'Barbearia',
+    },
+    {
+      url: 'ASSET (22).jpeg',
+      title: 'Old Money',
+      category: 'Barbearia',
+    },
+    {
+      url: 'ASSET (26).jpeg',
+      title: 'Platinado',
+      category: 'Cor',
+    },
+    {
+      url: 'ASSET (27).jpeg',
+      title: 'Golden Hair',
+      category: 'Cor',
+    },
+    {
+      url: 'ASSET (29).jpeg',
+      title: 'Corte Americano',
+      category: 'Cor',
+    },
+    {
+      url: 'ASSET (28).jpeg',
+      title: 'Corte Tribal',
+      category: 'Cor',
     },
   ],
   testimonialsSection: {
@@ -157,7 +227,7 @@ export const CONTENT: ContentConfig = {
       role: 'Cliente desde 2023',
     },
     {
-      name: 'Juliana Mendes',
+      name: 'Pedro Henrique',
       text: 'Ambiente maravilhoso e o Vitor é extremamente qualificado. Nota 10!',
       role: 'Cliente desde 2021',
     },
@@ -174,50 +244,35 @@ export const CONTENT: ContentConfig = {
     {
       question: 'Como funciona o agendamento?',
       answer:
-        'O agendamento é feito inicialmente através do formulário no site ou diretamente via WhatsApp. Após o contato, realizamos uma breve consultoria para entender suas necessidades e confirmar a disponibilidade.',
+        'O agendamento é feito diretamente via WhatsApp. Após o contato, realizamos uma breve consultoria para entender suas necessidades e confirmar a disponibilidade.',
     },
     {
       question: 'Onde fica o estúdio?',
       answer:
-        'Estamos localizados na Rua Major João Elias, 460 - Sala 4, em Sorocaba/SP. Um espaço pensado para o seu conforto e privacidade.',
+        'Estou localizado na Rua Major João Elias, 460 - Sala 4, em Sorocaba/SP. Um espaço pensado para o seu conforto e privacidade.',
     },
     {
       question: 'Quais formas de pagamento são aceitas?',
-      answer: 'Aceitamos cartões de crédito (com parcelamento), débito, PIX e dinheiro.',
+      answer: 'Aceito cartões de crédito, débito, PIX e dinheiro.',
     },
     {
-      question: 'Você atende atendimentos masculinos?',
+      question: 'Você faz atendimentos masculinos?',
       answer:
-        'Sim! Realizamos atendimentos masculinos completos, incluindo cortes e tratamentos específicos.',
+        'Sim! Realizo atendimentos masculinos completos, incluindo cortes e tratamentos específicos.',
     },
   ],
   contact: {
+    title: 'Agende sua',
+    subtitle: 'Transformação.',
     address: 'Rua Major João Elias, 460 - Sala 4, Sorocaba/SP',
     phone: '(15) 99683-1709',
-    email: 'contato@vitormadeira.com',
     whatsapp: '5515996831709',
+    instagram: '@vitormadeirahair',
     hours: 'Terça a Sábado: 09h às 19h',
-    social: {
-      instagram: 'https://instagram.com/vitormadeirahair',
-    },
-    form: {
-      title: 'Agende sua',
-      subtitle: 'Transformação.',
-      fields: {
-        name: 'Nome',
-        email: 'E-mail',
-        service: 'Serviço',
-        message: 'Mensagem',
-      },
-      button: 'Enviar',
-      success: 'Mensagem enviada com sucesso!',
-    },
   },
   footer: {
     social: {
       instagram: 'https://instagram.com/vitormadeirahair',
-      facebook: 'https://facebook.com/vitormadeirahair',
-      linkedin: 'https://linkedin.com/in/vitormadeira',
     },
     copyright: '© 2026 Vitor Madeira Hair',
   },
