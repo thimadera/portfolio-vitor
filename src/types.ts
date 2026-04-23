@@ -35,6 +35,30 @@ export interface HeroContent {
   profileImage: string;
   rotatingText: string;
 }
+
+export interface ContactContent {
+  address: string;
+  phone: string;
+  email: string;
+  whatsapp: string;
+  hours: string;
+  social: {
+    instagram: string;
+  };
+  form: {
+    title: string;
+    subtitle: string;
+    fields: {
+      name: string;
+      email: string;
+      service: string;
+      message: string;
+    };
+    button: string;
+    success: string;
+  };
+}
+
 export interface ContentConfig {
   loader: {
     text: string;
@@ -94,24 +118,7 @@ export interface ContentConfig {
     ctaButton: string;
   };
   faqs: Faq[];
-  contact: {
-    address: string;
-    phone: string;
-    whatsapp: string;
-    hours: string;
-    form: {
-      title: string;
-      subtitle: string;
-      fields: {
-        name: string;
-        email: string;
-        service: string;
-        message: string;
-      };
-      button: string;
-      success: string;
-    };
-  };
+  contact: ContactContent;
   footer: {
     social: {
       instagram: string;

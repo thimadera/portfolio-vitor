@@ -194,8 +194,12 @@ export const CONTENT: ContentConfig = {
   contact: {
     address: 'Rua Major João Elias, 460 - Sala 4, Sorocaba/SP',
     phone: '(15) 99683-1709',
+    email: 'contato@vitormadeira.com',
     whatsapp: '5515996831709',
     hours: 'Terça a Sábado: 09h às 19h',
+    social: {
+      instagram: 'https://instagram.com/vitormadeirahair',
+    },
     form: {
       title: 'Agende sua',
       subtitle: 'Transformação.',

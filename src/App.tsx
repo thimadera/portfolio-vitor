@@ -159,13 +159,7 @@ export default function App() {
 
       <FAQ section={content.faqSection} faqs={content.faqs} whatsapp={content.contact.whatsapp} />
 
-      <Contact
-        content={{
-          ...content.contact,
-          social: { instagram: content.footer.social.instagram },
-          email: 'contato@vitormadeira.com',
-        }}
-      />
+      <Contact content={CONTENT.contact} />
 
       <Footer
         content={{
