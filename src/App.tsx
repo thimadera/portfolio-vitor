@@ -84,7 +84,7 @@ export default function App() {
 
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2500);
+    }, 1500);
 
     window.addEventListener("scroll", handleScroll);
 

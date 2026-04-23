@@ -78,7 +78,7 @@ export function ParallaxImage({
   );
 }
 
-export function RevealText({
+function RevealText({
   children,
   delay = 0,
 }: {
