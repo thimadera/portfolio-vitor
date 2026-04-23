@@ -93,7 +93,7 @@ export function SectionHeading({
   light?: boolean;
 }) {
   return (
-    <div className="mb-12 md:mb-24">
+    <div className="mb-8 md:mb-12">
       <motion.span
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}

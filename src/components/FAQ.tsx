@@ -23,17 +23,39 @@ interface FAQProps {
 
 export function FAQ({ section, faqs, whatsapp }: FAQProps) {
   return (
-    <section className="py-32 md:py-48 px-6 bg-white">
+    <section className="py-12 md:py-20 px-6 bg-white">
       <div className="max-w-360 mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
-          <div className="lg:col-span-5">
-            <SectionHeading
-              subtitle={section.subtitle}
-              title={section.title}
-              description={section.description}
-            />
-            <div className="p-8 md:p-12 rounded-[40px] md:rounded-[50px] bg-brand-cream border border-brand-orange/10">
-              <h4 className="text-xl md:text-2xl font-display mb-6">{section.ctaTitle}</h4>
+        <SectionHeading
+          subtitle={section.subtitle}
+          title={section.title}
+          description={section.description}
+        />
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-16">
+          <div className="lg:col-span-8">
+            <Accordion className="w-full space-y-4">
+              {faqs.map((faq, i) => (
+                <AccordionItem
+                  key={i}
+                  value={`item-${i}`}
+                  className="border border-neutral-100 rounded-[32px] px-6 md:px-10 bg-brand-cream/30 data-[state=open]:bg-brand-cream transition-all duration-500 overflow-hidden"
+                >
+                  <AccordionTrigger className="hover:no-underline py-6 md:py-8 group">
+                    <span className="text-lg md:text-xl font-display font-bold leading-tight text-left group-data-[state=open]:text-brand-orange transition-colors">
+                      {faq.question}
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-6 md:pb-8 text-neutral-500 leading-relaxed text-sm md:text-md text-pretty">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+
+          <div className="lg:col-span-4 self-start">
+            <div className="p-8 md:p-10 rounded-[32px] md:rounded-[40px] bg-brand-cream border border-brand-orange/10 sticky top-24">
+              <h4 className="text-xl md:text-2xl font-display mb-4">{section.ctaTitle}</h4>
               <p className="text-neutral-500 mb-8 text-sm md:text-base">{section.ctaDescription}</p>
               <a
                 href={`https://wa.me/${whatsapp}`}
@@ -48,27 +70,6 @@ export function FAQ({ section, faqs, whatsapp }: FAQProps) {
                 />
               </a>
             </div>
-          </div>
-
-          <div className="lg:col-span-7">
-            <Accordion className="w-full space-y-4">
-              {faqs.map((faq, i) => (
-                <AccordionItem
-                  key={i}
-                  value={`item-${i}`}
-                  className="border border-neutral-100 rounded-[32px] md:rounded-[40px] px-6 md:px-10 bg-brand-cream/30 data-[state=open]:bg-brand-cream transition-all duration-500 overflow-hidden"
-                >
-                  <AccordionTrigger className="hover:no-underline py-8 md:py-10 group">
-                    <span className="text-lg md:text-2xl font-display font-bold leading-tight text-left group-data-[state=open]:text-brand-orange transition-colors">
-                      {faq.question}
-                    </span>
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-8 md:pb-10 text-neutral-500 leading-relaxed text-sm md:text-lg text-pretty">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
           </div>
         </div>
       </div>

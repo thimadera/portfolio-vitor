@@ -13,9 +13,9 @@ interface FooterProps {
 
 export function Footer({ content, whatsapp }: FooterProps) {
   return (
-    <footer className="py-20 md:py-40 px-6 bg-brand-cream overflow-hidden">
+    <footer className="py-12 md:py-20 px-6 bg-brand-cream overflow-hidden">
       <div className="max-w-360 mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24 mb-24 md:mb-40">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 mb-12 md:mb-16">
           <div className="lg:col-span-6">
             <h2 className="text-[clamp(2rem,10vw,10rem)] font-display font-bold leading-[0.8] tracking-tighter mb-12 whitespace-nowrap">
               Vitor <span className="text-brand-orange italic font-normal">Madeira.</span>

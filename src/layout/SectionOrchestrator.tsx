@@ -1,20 +1,16 @@
-import { lazy, Suspense } from 'react';
+import { Suspense } from 'react';
+import { Award, Clock, Scissors, Sparkles } from 'lucide-react';
 import { ContentConfig } from '../types';
 import { Loading } from '../components/ui/Loading';
-
-const About = lazy(() => import('../components/About').then((m) => ({ default: m.About })));
-const Contact = lazy(() => import('../components/Contact').then((m) => ({ default: m.Contact })));
-const FAQ = lazy(() => import('../components/FAQ').then((m) => ({ default: m.FAQ })));
-const Footer = lazy(() => import('../components/Footer').then((m) => ({ default: m.Footer })));
-const Gallery = lazy(() => import('../components/Gallery').then((m) => ({ default: m.Gallery })));
-const Hero = lazy(() => import('../components/Hero').then((m) => ({ default: m.Hero })));
-const Navbar = lazy(() => import('../components/Navbar').then((m) => ({ default: m.Navbar })));
-const Services = lazy(() =>
-  import('../components/Services').then((m) => ({ default: m.Services }))
-);
-const Testimonials = lazy(() =>
-  import('../components/Testimonials').then((m) => ({ default: m.Testimonials }))
-);
+import { Navbar } from '../components/Navbar';
+import { Hero } from '../components/Hero';
+import { About } from '../components/About';
+import { Services } from '../components/Services';
+import { Gallery } from '../components/Gallery';
+import { Testimonials } from '../components/Testimonials';
+import { FAQ } from '../components/FAQ';
+import { Footer } from '../components/Footer';
+import { Contact } from '../components/Contact';
 
 interface Props {
   content: ContentConfig;
@@ -55,7 +51,7 @@ export function SectionOrchestrator({
       <Services
         section={content.servicesSection}
         services={content.services}
-        iconMap={{}}
+        iconMap={{ Sparkles, Scissors, Clock, Award }}
         whatsapp={content.contact.whatsapp}
       />
       <Gallery

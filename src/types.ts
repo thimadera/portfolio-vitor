@@ -13,6 +13,7 @@ export interface Faq {
 }
 
 export interface GalleryItem {
+  id: string;
   url: string;
   title: string;
   category: string;

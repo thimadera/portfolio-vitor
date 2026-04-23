@@ -31,13 +31,13 @@ export function About({ content }: AboutProps) {
   });
 
   return (
-    <section id="sobre" ref={container} className="py-32 md:py-64 px-6 relative overflow-hidden">
+    <section id="sobre" ref={container} className="py-16 md:py-24 px-6 relative overflow-hidden">
       <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/4 text-[clamp(10rem,40vw,25rem)] font-display font-black text-brand-dark/2 pointer-events-none select-none whitespace-nowrap">
         Vitor Madeira
       </div>
 
       <div className="max-w-360 mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5 order-2 lg:order-1">
             <SectionHeading
               subtitle={content.subtitle}

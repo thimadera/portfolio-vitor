@@ -1,4 +1,4 @@
-import { ArrowDownRight, Wallet } from 'lucide-react';
+import { ArrowDownRight, LucideIcon, Wallet } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Button } from '@/src/components/ui/button';
 import {
@@ -26,13 +26,14 @@ interface ServicesProps {
   whatsapp: string;
 }
 
+function RenderIcon(Icon: LucideIcon) {
+  return <Icon size={24} />;
+}
+
 export function Services({ section, services, iconMap, whatsapp }: ServicesProps) {
   return (
-    <section
-      id="serviços"
-      className="py-20 md:py-48 px-4 md:px-6 bg-brand-dark text-white rounded-[40px] md:rounded-[100px] mx-4 md:mx-12 overflow-hidden"
-    >
-      <div className="max-w-360 mx-auto">
+    <section id="serviços" className="py-12 md:py-20 px-4 bg-brand-dark text-white overflow-hidden">
+      <div className="max-w-7xl mx-auto">
         <SectionHeading
           subtitle={section.subtitle}
           title={section.title}
@@ -52,7 +53,7 @@ export function Services({ section, services, iconMap, whatsapp }: ServicesProps
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 }}
                       whileHover={{ y: -10 }}
-                      className="group bg-white/5 border border-white/10 p-6 sm:p-8 md:p-10 rounded-[32px] md:rounded-[50px] hover:bg-white hover:border-white transition-all duration-700 grid content-between min-h-60 sm:min-h-80 md:min-h-95 cursor-pointer h-full"
+                      className="group p-0 transition-all duration-700 grid content-between min-h-40 sm:min-h-60 md:min-h-80 cursor-pointer h-full border-t border-white/10"
                     />
                   }
                 >
@@ -60,7 +61,7 @@ export function Services({ section, services, iconMap, whatsapp }: ServicesProps
                     <span className="text-brand-orange group-hover:text-brand-orange font-mono text-[10px] md:text-xs mb-4 sm:mb-8 block transition-colors">
                       {service.id}
                     </span>
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-display mb-2 sm:mb-4 group-hover:text-brand-dark transition-colors">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-display mb-2 sm:mb-4 transition-colors">
                       {service.title}
                     </h3>
                     <p className="text-white/40 group-hover:text-neutral-500 text-[10px] sm:text-sm leading-relaxed transition-colors line-clamp-3">
@@ -79,7 +80,7 @@ export function Services({ section, services, iconMap, whatsapp }: ServicesProps
                 <DialogContent className="bg-brand-cream border-none max-w-2xl rounded-[40px] md:rounded-[60px] p-8 md:p-16 gap-0">
                   <div className="grid grid-flow-col auto-cols-max items-center gap-4 mb-6 md:mb-8">
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-brand-orange/10 grid place-items-center text-brand-orange">
-                      {iconMap[service.iconName]}
+                      {RenderIcon(iconMap[service.iconName])}
                     </div>
                     <span className="text-brand-orange font-mono text-[10px] md:text-xs tracking-widest uppercase">
                       {service.id}
@@ -110,7 +111,10 @@ export function Services({ section, services, iconMap, whatsapp }: ServicesProps
                   </div>
                   <Button
                     onClick={() => {
-                      window.open(`https://wa.me/${whatsapp}`, '_blank');
+                      const message = encodeURIComponent(
+                        `Olá! Gostaria de agendar o serviço: ${service.title}`
+                      );
+                      window.open(`https://wa.me/${whatsapp}?text=${message}`, '_blank');
                     }}
                     className="w-full bg-brand-dark text-white py-8 rounded-full font-bold text-xs md:text-sm tracking-widest uppercase hover:bg-brand-orange transition-all duration-500 h-auto"
                   >
