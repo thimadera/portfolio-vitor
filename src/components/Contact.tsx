@@ -1,4 +1,4 @@
-import { ArrowRight, MapPin, Phone, Mail } from 'lucide-react';
+import { ArrowRight, MapPin, Phone, Instagram } from 'lucide-react';
 import { motion } from 'motion/react';
 import { ContactContent } from '../types';
 
@@ -18,10 +18,8 @@ export function Contact({ content }: ContactProps) {
           <div className="grid gap-12">
             <div>
               <h2 className="text-[clamp(3.5rem,8vw,6rem)] font-display leading-[0.9] tracking-tighter mb-4">
-                {content.form.title} <br />
-                <em className="text-brand-orange font-normal not-italic">
-                  {content.form.subtitle}
-                </em>
+                {content.title} <br />
+                <em className="text-brand-orange font-normal not-italic">{content.subtitle}</em>
               </h2>
               <p className="text-white/60 text-lg md:text-xl max-w-lg">
                 Pronto para descobrir sua melhor versão? Vamos conversar.
@@ -32,7 +30,7 @@ export function Contact({ content }: ContactProps) {
               {[
                 { icon: MapPin, label: 'Localização', value: content.address },
                 { icon: Phone, label: 'Contato', value: content.phone },
-                { icon: Mail, label: 'E-mail', value: content.email },
+                { icon: Instagram, label: 'Instagram', value: content.instagram },
               ].map((item, i) => (
                 <div
                   key={i}

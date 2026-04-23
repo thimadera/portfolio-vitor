@@ -60,34 +60,6 @@ export function About({ content }: AboutProps) {
                 </motion.div>
               ))}
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mt-20 grid grid-flow-col justify-start items-center gap-12"
-            >
-              <div className="grid grid-flow-col -space-x-4">
-                {[1, 2, 3].map((i) => (
-                  <div
-                    key={i}
-                    className="w-12 h-12 rounded-full border-4 border-brand-cream overflow-hidden"
-                  >
-                    <img
-                      src={`https://picsum.photos/seed/hair${i}/100/100`}
-                      alt="Client"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className="text-xs font-black uppercase tracking-widest text-neutral-400">
-                <span className="text-brand-dark block">
-                  {content.stats.value} {content.stats.unit}
-                </span>
-                {content.stats.label}
-              </div>
-            </motion.div>
           </div>
 
           <div className="lg:col-span-7 order-1 lg:order-2 relative">
