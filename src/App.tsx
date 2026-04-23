@@ -4,7 +4,7 @@
  */
 
 import Lenis from 'lenis';
-import { ArrowDownRight, Award, Clock, Facebook, Instagram, Linkedin, MapPin, Phone, Scissors, Sparkles } from 'lucide-react';
+import { ArrowDownRight, Phone } from 'lucide-react';
 import { AnimatePresence, motion, useScroll, useSpring } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { SEO } from './components/SEO';
@@ -14,18 +14,6 @@ import { Loader } from './components/Loader';
 import { SectionOrchestrator } from './layout/SectionOrchestrator';
 
 const content = CONTENT;
-
-const iconMap: Record<string, any> = {
-  Scissors: <Scissors className="w-5 h-5" />,
-  Sparkles: <Sparkles className="w-5 h-5" />,
-  Clock: <Clock className="w-5 h-5" />,
-  Award: <Award className="w-5 h-5" />,
-  MapPin: <MapPin />,
-  Phone: <Phone />,
-  Instagram: <Instagram />,
-  Facebook: <Facebook />,
-  Linkedin: <Linkedin />,
-};
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -88,7 +76,7 @@ export default function App() {
         className="fixed top-0 left-0 right-0 h-1 bg-brand-orange z-100 origin-left"
         style={{ scaleX }}
       />
-      
+
       <SectionOrchestrator
         content={content}
         scrolled={scrolled}
