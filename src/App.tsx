@@ -4,35 +4,14 @@
  */
 
 import Lenis from 'lenis';
-import {
-  ArrowDownRight,
-  Award,
-  Clock,
-  Facebook,
-  Instagram,
-  Linkedin,
-  MapPin,
-  Phone,
-  Scissors,
-  Sparkles,
-} from 'lucide-react';
+import { ArrowDownRight, Award, Clock, Facebook, Instagram, Linkedin, MapPin, Phone, Scissors, Sparkles } from 'lucide-react';
 import { AnimatePresence, motion, useScroll, useSpring } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { SEO } from './components/SEO';
 import { CONTENT } from './constants/content';
-
-// Components
 import { Toaster } from '@/src/components/ui/sonner';
-import { About } from './components/About';
-import { Contact } from './components/Contact';
-import { FAQ } from './components/FAQ';
-import { Footer } from './components/Footer';
-import { Gallery } from './components/Gallery';
-import { Hero } from './components/Hero';
 import { Loader } from './components/Loader';
-import { Navbar } from './components/Navbar';
-import { Services } from './components/Services';
-import { Testimonials } from './components/Testimonials';
+import { SectionOrchestrator } from './layout/SectionOrchestrator';
 
 const content = CONTENT;
 
@@ -95,13 +74,6 @@ export default function App() {
     };
   }, []);
 
-  const nextTestimonial = () =>
-    setTestimonialIndex((prev) => (prev + 1) % content.testimonials.length);
-  const prevTestimonial = () =>
-    setTestimonialIndex(
-      (prev) => (prev - 1 + content.testimonials.length) % content.testimonials.length
-    );
-
   return (
     <div className="min-h-screen selection:bg-brand-orange selection:text-white bg-brand-cream text-brand-dark grain">
       <SEO />
@@ -116,57 +88,15 @@ export default function App() {
         className="fixed top-0 left-0 right-0 h-1 bg-brand-orange z-100 origin-left"
         style={{ scaleX }}
       />
-
-      <Navbar
+      
+      <SectionOrchestrator
+        content={content}
         scrolled={scrolled}
-        navItems={content.navigation.items}
-        ctaText={content.navigation.cta}
-        socialLinks={{ instagram: content.footer.social.instagram }}
-        copyright={content.footer.copyright}
-        whatsapp={content.contact.whatsapp}
-      />
-
-      <Hero
-        content={content.hero}
-        scrollYProgress={scrollYProgress}
-        whatsapp={content.contact.whatsapp}
-        socialLinks={{ instagram: content.footer.social.instagram }}
-      />
-
-      <About content={content.about} />
-
-      <Services
-        section={content.servicesSection}
-        services={content.services}
-        iconMap={iconMap}
-        whatsapp={content.contact.whatsapp}
-      />
-
-      <Gallery
-        section={content.gallerySection}
-        gallery={content.gallery}
         activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}
-      />
-
-      <Testimonials
-        section={content.testimonialsSection}
-        testimonials={content.testimonials}
         testimonialIndex={testimonialIndex}
-        prevTestimonial={prevTestimonial}
-        nextTestimonial={nextTestimonial}
-      />
-
-      <FAQ section={content.faqSection} faqs={content.faqs} whatsapp={content.contact.whatsapp} />
-
-      <Contact content={CONTENT.contact} />
-
-      <Footer
-        content={{
-          ...content.footer,
-          social: { instagram: content.footer.social.instagram },
-        }}
-        whatsapp={content.contact.whatsapp}
+        setTestimonialIndex={setTestimonialIndex}
+        scrollYProgress={scrollYProgress}
       />
 
       {/* Sticky Mobile CTA & Back to Top */}
