@@ -14,8 +14,8 @@ export function SEO({ title, description, canonical }: SEOProps) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Vitor Madeira',
-    url: 'https://vitormadeirahair.com', // Should be updated
+    name: 'Vitor Madeira Hair',
+    url: 'https://vitor-madeira-hair.vercel.app/',
     jobTitle: 'Cabeleireiro',
     worksFor: {
       '@type': 'Organization',

@@ -33,7 +33,7 @@ export function Navbar({
           animate={{ opacity: 1 }}
           className={`text-xl sm:text-2xl font-display font-bold tracking-tighter transition-colors duration-500 whitespace-nowrap ${scrolled || isMenuOpen ? 'text-brand-dark' : 'text-white'}`}
         >
-          Vitor Madeira
+          Vitor Madeira Hair
           <span className="font-light italic text-brand-orange">.</span>
         </motion.div>
 
