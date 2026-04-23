@@ -1,5 +1,6 @@
 import { ChevronRight, Quote } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
+import { Dispatch, SetStateAction } from 'react';
 import { Testimonial } from '../types';
 import { SectionHeading } from './Layout';
 
@@ -10,16 +11,14 @@ interface TestimonialsProps {
   };
   testimonials: Testimonial[];
   testimonialIndex: number;
-  prevTestimonial: () => void;
-  nextTestimonial: () => void;
+  setTestimonialIndex: Dispatch<SetStateAction<number>>;
 }
 
 export function Testimonials({
   section,
   testimonials,
   testimonialIndex,
-  prevTestimonial,
-  nextTestimonial,
+  setTestimonialIndex,
 }: TestimonialsProps) {
   return (
     <section
@@ -35,13 +34,13 @@ export function Testimonials({
             <SectionHeading subtitle={section.subtitle} title={section.title} light />
             <div className="grid grid-flow-col justify-start gap-4">
               <button
-                onClick={prevTestimonial}
+                onClick={() => setTestimonialIndex(testimonialIndex - 1)}
                 className="w-16 h-16 rounded-full border border-white/20 grid place-items-center text-white hover:bg-white hover:text-brand-orange transition-all duration-500 cursor-pointer"
               >
                 <ChevronRight className="rotate-180" />
               </button>
               <button
-                onClick={nextTestimonial}
+                onClick={() => setTestimonialIndex(testimonialIndex + 1)}
                 className="w-16 h-16 rounded-full border border-white/20 grid place-items-center text-white hover:bg-white hover:text-brand-orange transition-all duration-500 cursor-pointer"
               >
                 <ChevronRight />
