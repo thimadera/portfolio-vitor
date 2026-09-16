@@ -271,7 +271,7 @@ export const CONTENT: ContentConfig = {
     {
       question: 'Onde fica o estúdio?',
       answer:
-        'Estou localizado na Rua Major João Elias, 460 - Sala 4, em Sorocaba/SP. Um espaço pensado para o seu conforto e privacidade.',
+        'Estou localizado na Rua Doutor Virgílio de Mello Franco, 735 - Vila Trujillo, em Sorocaba/SP. Um espaço pensado para o seu conforto e privacidade.',
     },
     {
       question: 'Quais formas de pagamento são aceitas?',
@@ -286,7 +286,7 @@ export const CONTENT: ContentConfig = {
   contact: {
     title: 'Agende sua',
     subtitle: 'Transformação.',
-    address: 'Rua Major João Elias, 460 - Sala 4, Sorocaba/SP',
+    address: 'Rua Doutor Virgílio de Mello Franco, 735 - Vila Trujillo, Sorocaba/SP',
     phone: '(15) 99683-1709',
     whatsapp: '5515996831709',
     instagram: '@vitormadeirahair',
