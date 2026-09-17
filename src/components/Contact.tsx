@@ -25,23 +25,46 @@ export function Contact({ content }: ContactProps) {
 
             <div className="grid gap-4 md:gap-6">
               {[
-                { icon: MapPin, label: 'Localização', value: content.address },
-                { icon: Phone, label: 'Contato', value: content.phone },
-                { icon: Instagram, label: 'Instagram', value: content.instagram },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors"
-                >
-                  <item.icon className="text-brand-orange mt-1 shrink-0" size={20} />
-                  <div>
-                    <div className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 mb-1">
-                      {item.label}
+                {
+                  icon: MapPin,
+                  label: 'Localização',
+                  value: content.address,
+                  href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(content.address)}`,
+                },
+                {
+                  icon: Phone,
+                  label: 'Contato',
+                  value: content.phone,
+                  href: `https://wa.me/${content.whatsapp}`,
+                },
+                {
+                  icon: Instagram,
+                  label: 'Instagram',
+                  value: content.instagram,
+                  href: `https://instagram.com/${content.instagram.replace('@', '')}`,
+                },
+              ].map((item, i) => {
+                const Tag = item.href ? 'a' : 'div';
+                return (
+                  <Tag
+                    key={i}
+                    {...(item.href
+                      ? { href: item.href, target: '_blank', rel: 'noopener noreferrer' }
+                      : {})}
+                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors"
+                  >
+                    <item.icon className="text-brand-orange mt-1 shrink-0" size={20} />
+                    <div>
+                      <div className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 mb-1">
+                        {item.label}
+                      </div>
+                      <div className="font-sans text-sm md:text-base text-white/90">
+                        {item.value}
+                      </div>
                     </div>
-                    <div className="font-sans text-sm md:text-base text-white/90">{item.value}</div>
-                  </div>
-                </div>
-              ))}
+                  </Tag>
+                );
+              })}
             </div>
           </div>
 

@@ -34,13 +34,15 @@ export function Testimonials({
             <SectionHeading subtitle={section.subtitle} title={section.title} light />
             <div className="grid grid-flow-col justify-start gap-4">
               <button
-                onClick={() => setTestimonialIndex(testimonialIndex - 1)}
+                onClick={() =>
+                  setTestimonialIndex((i) => (i - 1 + testimonials.length) % testimonials.length)
+                }
                 className="w-12 h-12 md:w-16 md:h-16 rounded-full border border-white/20 grid place-items-center text-white hover:bg-white hover:text-brand-orange transition-all duration-500 cursor-pointer"
               >
                 <ChevronRight className="rotate-180" />
               </button>
               <button
-                onClick={() => setTestimonialIndex(testimonialIndex + 1)}
+                onClick={() => setTestimonialIndex((i) => (i + 1) % testimonials.length)}
                 className="w-12 h-12 md:w-16 md:h-16 rounded-full border border-white/20 grid place-items-center text-white hover:bg-white hover:text-brand-orange transition-all duration-500 cursor-pointer"
               >
                 <ChevronRight />
