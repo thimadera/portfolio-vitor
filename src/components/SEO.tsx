@@ -8,18 +8,18 @@ interface SEOProps {
 }
 
 export function SEO({ title, description, canonical }: SEOProps) {
-  const siteTitle = title ? `${title} | Vittor Braga Hair` : 'Vitor Braga Hair';
+  const siteTitle = title ? `${title} | Vittor Madeira Hair` : 'Vitor Madeira Hair';
   const siteDescription = description || CONTENT.hero.description;
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Vitor Braga Hair',
-    url: 'https://vitor-braga-hair.vercel.app/',
+    name: 'Vitor Madeira Hair',
+    url: 'https://vitor-madeira-hair.vercel.app/',
     jobTitle: 'Cabeleireiro',
     worksFor: {
       '@type': 'Organization',
-      name: 'Vitor Braga Hair',
+      name: 'Vitor Madeira Hair',
     },
     description: siteDescription,
     image: CONTENT.hero.profileImage,
@@ -41,7 +41,7 @@ export function SEO({ title, description, canonical }: SEOProps) {
       <meta property="og:title" content={siteTitle} />
       <meta property="og:description" content={siteDescription} />
       <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="Vitor Braga Hair" />
+      <meta property="og:site_name" content="Vitor Madeira Hair" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />

@@ -33,7 +33,7 @@ export function About({ content }: AboutProps) {
   return (
     <section id="sobre" ref={container} className="py-16 md:py-24 px-6 relative overflow-hidden">
       <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/4 text-[clamp(10rem,40vw,25rem)] font-display font-black text-brand-dark/2 pointer-events-none select-none whitespace-nowrap">
-        Vitor Braga
+        Vitor Madeira
       </div>
 
       <div className="max-w-360 mx-auto relative z-10">
