@@ -19,7 +19,7 @@ export function Loader({ text }: LoaderProps) {
           transition={{ duration: 0.8, ease: 'circOut' }}
           className="text-3xl sm:text-4xl md:text-6xl font-display font-bold text-white text-center whitespace-nowrap"
         >
-          Vitor Madeira<span className="text-brand-orange">.</span>
+          Vitor Braga<span className="text-brand-orange">.</span>
         </motion.div>
       </div>
       <div className="w-48 h-px bg-white/10 relative overflow-hidden">

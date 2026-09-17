@@ -18,7 +18,7 @@ export function Footer({ content, whatsapp }: FooterProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 mb-12 md:mb-16">
           <div className="lg:col-span-6">
             <h2 className="text-[clamp(2rem,10vw,10rem)] font-display font-bold leading-[0.8] tracking-tighter mb-12 whitespace-nowrap">
-              Vitor <span className="text-brand-orange italic font-normal">Madeira.</span>
+              Vitor <span className="text-brand-orange italic font-normal">Braga.</span>
             </h2>
             <div className="grid grid-flow-col justify-start gap-6">
               <Magnetic>

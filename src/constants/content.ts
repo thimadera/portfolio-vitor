@@ -16,7 +16,7 @@ export const CONTENT: ContentConfig = {
     cta: 'Agendar Horário',
     image: 'ASSET%20(2).jpeg',
     profileImage: 'ASSET (4).jpeg',
-    rotatingText: 'Vitor Madeira • Sorocaba • Identidade • ',
+    rotatingText: 'Vitor Braga • Sorocaba • Identidade • ',
   },
   about: {
     subtitle: 'O Artista',
@@ -289,13 +289,13 @@ export const CONTENT: ContentConfig = {
     address: 'Rua Doutor Virgílio de Mello Franco, 735 - Vila Trujillo, Sorocaba/SP',
     phone: '(15) 99683-1709',
     whatsapp: '5515996831709',
-    instagram: '@vitormadeirahair',
+    instagram: '@vitorbragahair',
     hours: 'Terça a Sábado: 09h às 19h',
   },
   footer: {
     social: {
-      instagram: 'https://instagram.com/vitormadeirahair',
+      instagram: 'https://instagram.com/vitorbragahair',
     },
-    copyright: '© 2026 Vitor Madeira Hair',
+    copyright: '© 2026 Vitor Braga Hair',
   },
 } as const;

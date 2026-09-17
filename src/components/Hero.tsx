@@ -14,7 +14,7 @@ interface HeroProps {
 
 export function Hero({ content, scrollYProgress, whatsapp, socialLinks }: HeroProps) {
   const y = useTransform(scrollYProgress, [0, 1], [0, 500]);
-  const altText = `Retrato profissional de Vitor Madeira: ${content.description.substring(0, 50)}...`;
+  const altText = `Retrato profissional de Vitor Braga: ${content.description.substring(0, 50)}...`;
 
   return (
     <section
